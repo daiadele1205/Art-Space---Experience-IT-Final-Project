@@ -16,5 +16,6 @@ namespace ArtSpace_Project.Data
         public DbSet<Medium> Medium { get; set; }
         public DbSet<ArtworkType> ArtworkType { get; set; }
         public DbSet<ArtworkPortfolio> ArtworkPortfolio { get; set; }
+        public DbSet<Coupon> Coupon { get; set; }
     }
 }
