@@ -144,7 +144,7 @@
                 var items = '';
                 $('#ArtworkTypeId').empty();
                 $.each(data, function (i, ArtworkType) {
-                    items += "<option value='" + artworktype.value + "'>" + artworktype.text + "</option>";
+                    items += "<option value='" + ArtworkType.value + "'>" + ArtworkType.text + "</option>";
                 });
                 $('#ArtworkTypeId').html(items);
             })
