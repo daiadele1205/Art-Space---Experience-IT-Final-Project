@@ -139,12 +139,12 @@
         });
         function getArtworkType() {
             var url = '@Url.Content("~/")' + "Admin/ArtworkType/GetArtworkType";
-            var ddlsoruce = '#MediumId';
-            $.getJSON(url, { id: $(ddlsoruce).val() }, function (data) {
+            var ddlsource = '#MediumId';
+            $.getJSON(url, { id: $(ddlsource).val() }, function (data) {
                 var items = '';
                 $('#ArtworkTypeId').empty();
                 $.each(data, function (i, ArtworkType) {
-                    items += "<option value='" + artworktype.value + "'>" + artworktype.text + "</option>";
+                    items += "<option value='" + ArtworkType.value + "'>" + ArtworkType.text + "</option>";
                 });
                 $('#ArtworkTypeId').html(items);
             })
