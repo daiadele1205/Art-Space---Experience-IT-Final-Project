@@ -105,16 +105,29 @@ namespace ArtSpace_Project.Areas.Identity.Pages.Account
                     var result = await _userManager.CreateAsync(user, Input.Password);
                     if (result.Succeeded)
                     {
-                        if (role == SD.ManagerUser)
-                        {
-                            await _userManager.AddToRoleAsync(user, SD.ManagerUser);
-                        }
-                        else
-                        {
-                            await _userManager.AddToRoleAsync(user, SD.CustomerEndUser);
-                            await _signInManager.SignInAsync(user, isPersistent: false);
-                            return LocalRedirect(returnUrl);
-                        }
+                    //Code to create the roles in the database
+                    //Keep these lines in the first the program is run then comment them out
+                    if (!await _roleManager.RoleExistsAsync(SD.ManagerUser))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(SD.ManagerUser));
+                    }
+                    if (!await _roleManager.RoleExistsAsync(SD.CustomerEndUser))
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole(SD.CustomerEndUser));
+                    }
+
+                    if (role == SD.ManagerUser)
+                    {
+                        await _userManager.AddToRoleAsync(user, SD.ManagerUser);
+                    }
+                    else
+                    {
+                        await _userManager.AddToRoleAsync(user, SD.CustomerEndUser);
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return LocalRedirect(returnUrl);
+                    }
+
+
 
                         return LocalRedirect(returnUrl);
 

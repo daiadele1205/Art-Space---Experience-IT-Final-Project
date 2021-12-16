@@ -17,7 +17,7 @@ namespace ArtSpace_Project.Models
 
         public int Id { get; set; }
 
-        private string ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; }
 
        
 

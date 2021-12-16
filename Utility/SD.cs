@@ -14,7 +14,7 @@ namespace ArtSpace_Project.Utility
 
 
 
-        public const string ssShopingCartCount = "ssShopingCartCount";
-        internal static string ssShoppingCartCount;
+        public const string ssShoppingCartCount = "ssShopingCartCount";
+        
     }
 }
