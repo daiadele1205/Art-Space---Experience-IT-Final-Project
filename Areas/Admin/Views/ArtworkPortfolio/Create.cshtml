@@ -72,10 +72,10 @@
 
             <div class="form-group row">
                 <div class="col-4">
-                    <label asp-for="ArtworkPortfolio.Size" class="col-form-label"></label>
+                    <label asp-for="ArtworkPortfolio.Size" class="col-form-label">Size (W x H x D) in inches</label>
                 </div>
                 <div class="col-8">
-                    <select asp-for="ArtworkPortfolio.Size" asp-items="Html.GetEnumSelectList<ArtworkPortfolio.ESize>()" class="form-control"></select>
+                    <input asp-for="ArtworkPortfolio.Size" class="form-control" />
                 </div>
             </div>
 
