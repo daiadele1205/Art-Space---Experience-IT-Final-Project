@@ -21,18 +21,7 @@
                         <div class="row pr-3">
                             <div class="col-8">
                                 <label class="text-primary" style="font-size:21px;color:maroon">@item.Name</label>
-                                @if (item.Size == "1")
-                                {
-                                    <img srcset="/images/smallsize.png" title="Small" />
-                                }
-                                @if (item.Size == "2")
-                                {
-                                    <img srcset="/images/mediumsize.png" title="Medium" />
-                                }
-                                @if (item.Size == "3")
-                                {
-                                    <img srcset="/images/largesize.png" title="Large" />
-                                }
+                                <label class="text-primary" style="font-size:14px;color:maroon">@item.Size in</label>
                             </div>
                             <div class="col-4 text-right" style="color:maroon">
                                 <h4>$@item.Price</h4>
