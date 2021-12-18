@@ -70,6 +70,15 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+<<<<<<< HEAD
+
+@@ -69,3 +69,24 @@ body {
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+=======
+>>>>>>> f86a7754bd35d41b1cf02fed49afe02af27ce430
 .menu-filter-list li {
     display: inline-block;
     cursor: pointer;
@@ -86,7 +95,13 @@ body {
     font-family: "Poppins",sans-serif;
 }
 
+<<<<<<< HEAD
+.menu-filter-list li.is-checke, .menu-filter-list li:hover {
+     background-color: #545b62;
+     color: #fff
+=======
     .menu-filter-list li.is-checke, .menu-filter-list li:hover {
         background-color: #545b62;
         color: #fff
+>>>>>>> f86a7754bd35d41b1cf02fed49afe02af27ce430
     }

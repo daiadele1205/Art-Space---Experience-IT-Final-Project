@@ -1,5 +1,6 @@
 using ArtSpace_Project.Data;
 using ArtSpace_Project.Services;
+using ArtSpace_Project.Utility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Stripe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +39,9 @@ namespace ArtSpace_Project
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddSingleton<IEmailSender, EmailSender>();
+
+            services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+
 
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -67,6 +72,9 @@ namespace ArtSpace_Project
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            //StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
+            StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["SecretKey"]);
             app.UseSession();
 
             app.UseAuthentication();

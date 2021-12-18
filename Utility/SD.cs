@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArtSpace_Project.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace ArtSpace_Project.Utility
         public const string CustomerEndUser = "Customer";
 
 
-        
+
         public const string ssShoppingCartCount = "ssShopingCartCount";
         public const string ssCouponCode = "ssCouponCode";
 
@@ -86,5 +87,6 @@ namespace ArtSpace_Project.Utility
             }
             return OriginalOrderTotal;
         }
+
     }
 }
