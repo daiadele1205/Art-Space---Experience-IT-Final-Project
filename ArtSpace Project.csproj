@@ -15,10 +15,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.21" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.21" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Stripe.net" Version="39.83.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Artist\Controllers\" />
+    <Folder Include="Customer\Controllers\" />
   </ItemGroup>
 
 </Project>
