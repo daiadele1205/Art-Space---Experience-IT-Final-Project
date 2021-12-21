@@ -74,7 +74,7 @@ namespace ArtSpace_Project
             app.UseRouting();
 
             //StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
-            StripeConfiguration.SetApiKey(Configuration.GetSection("Stripe")["SecretKey"]);
+            StripeConfiguration.ApiKey = Configuration.GetSection("Stripe")["SecretKey"];
             app.UseSession();
 
             app.UseAuthentication();
