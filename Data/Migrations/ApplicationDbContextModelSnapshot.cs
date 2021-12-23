@@ -217,6 +217,16 @@ namespace ArtSpace_Project.Data.Migrations
                     b.ToTable("OrderHeader");
                 });
 
+            modelBuilder.Entity("ArtSpace_Project.Models.SearchByArtist", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("SearchByArtists");
+                });
+
             modelBuilder.Entity("ArtSpace_Project.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")

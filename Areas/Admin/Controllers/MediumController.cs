@@ -1,5 +1,7 @@
 ﻿using ArtSpace_Project.Data;
 using ArtSpace_Project.Models;
+using ArtSpace_Project.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace ArtSpace_Project.Areas.Admin.Controllers
 {
+    
     [Area("Admin")]
     public class MediumController : Controller
     {
