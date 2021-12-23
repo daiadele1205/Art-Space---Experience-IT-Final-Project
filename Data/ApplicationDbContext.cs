@@ -21,5 +21,6 @@ namespace ArtSpace_Project.Data
         public DbSet<ShoppingCart> ShoppingCart { get; set; }
         public DbSet<OrderHeader> OrderHeader { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<SearchByArtist> SearchByArtists { get; set; }
     }
 }

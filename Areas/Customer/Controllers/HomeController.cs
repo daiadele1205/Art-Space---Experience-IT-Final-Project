@@ -22,7 +22,7 @@ namespace ArtSpace_Project.Controllers
         private readonly ApplicationDbContext _db;
         public HomeController(ApplicationDbContext db)
         {
-            _db = db;
+            _db = db; 
         }
 
 
@@ -46,6 +46,31 @@ namespace ArtSpace_Project.Controllers
             }
 
             return View(IndexVM);
+        }
+
+        public async Task<IActionResult> GetByArtist(string name)
+        {
+            {
+                IndexViewModel IndexVM = new IndexViewModel()
+                {
+                    ArtworkPortfolio = await _db.ArtworkPortfolio.Include(m => m.Medium)
+                            .Where(x => x.Artist == name)
+                            .Include(m => m.ArtworkType).ToListAsync(),
+                    Medium = await _db.Medium.ToListAsync(),
+                    Coupon = await _db.Coupon.Where(c => c.IsActive == true).ToListAsync()
+                };
+
+                var claimsIdentity = (ClaimsIdentity)User.Identity;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+                if (claim != null)
+                {
+                    var cnt = _db.ShoppingCart.Where(u => u.ApplicationUserId == claim.Value).ToList().Count;
+                    HttpContext.Session.SetInt32(SD.ssShoppingCartCount, cnt);
+                }
+
+                return View("Index", IndexVM);
+            }
         }
 
         [Authorize]
